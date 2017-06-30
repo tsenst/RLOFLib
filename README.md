@@ -3,7 +3,11 @@ Thank You
 Tobias Senst
 
 # Robust Local Optical Flow V1.3
-This repository contains a description of the RLOF library on Robust Local Optical Flow estimation. Please visit our webpage for more information (http://www.nue.tu-berlin.de/menue/forschung/projekte/rlof/).
+This repository contains a description of the RLOF library on Robust Local Optical Flow estimation. 
+Please visit our webpage for more information (http://www.nue.tu-berlin.de/menue/forschung/projekte/rlof/).
+
+	If you use this algorithm for a scientific publication, please cite the one of the paper listed below.
+
 The RLOFlib library is a sparse optical flow and feature tracking library. In this documentation we will use the definition of feature tracking. We use feature tracking in the following context. 
 For a given set of point (feature points) defined at positions in an image at a time t, the Feature tracking method is able to track the positions of the feature points in the subsequent image at time t+1. 
 In other words for each point of the feature set at time t the PLK and RLOF derived methods compute the motion at these positions from image at time t to the subsequent image at time t+1.
