@@ -41,5 +41,5 @@ endif()
 
 target_link_libraries(RLOFApp  LINK_PUBLIC
             ${OpenCV_LIBS}
-            ${LIBRLOF_PATH} "-Wl,--allow-multiple-definition"
+            ${LIBRLOF_NAME} "-Wl,--allow-multiple-definition"
         )
