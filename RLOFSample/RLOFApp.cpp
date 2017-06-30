@@ -14,8 +14,8 @@
 
 int main(int argc, char** argv)
 {
-	cv::Mat prevImg = cv::imread("../Doc/ErnstReuter1.png");
-	cv::Mat currImg = cv::imread("../Doc/ErnstReuter2.png");
+	cv::Mat prevImg = cv::imread("../../Doc/ErnstReuter1.png");
+	cv::Mat currImg = cv::imread("../../Doc/ErnstReuter2.png");
 	rlof::Image img0, img1;
 	std::vector<rlof::CRPoint> prevPoints, currPoints;
 	img0.attach(prevImg);
