@@ -14,8 +14,8 @@
 
 int main(int argc, char** argv)
 {
-	cv::Mat prevImg = cv::imread("D:/DataBase/Sintel/training/final/ambush_4/frame_0012.png");
-	cv::Mat currImg = cv::imread("D:/DataBase/Sintel/training/final/ambush_4/frame_0013.png");
+	cv::Mat prevImg = cv::imread("../Doc/ErnstReuter1.png");
+	cv::Mat currImg = cv::imread("../Doc/ErnstReuter2.png");
 	rlof::Image img0, img1;
 	std::vector<rlof::CRPoint> prevPoints, currPoints;
 	img0.attach(prevImg);
@@ -35,7 +35,15 @@ int main(int argc, char** argv)
 
 	// run RLOF
 	double time = static_cast<double>(cvGetTickCount());
-	proc->run(img0, img1, prevPoints, currPoints);
+	try
+	{
+	  proc->run(img0, img1, prevPoints, currPoints);
+	}
+	catch(std::runtime_error & e)
+	{
+	  std::cout << e.what() << std::endl;
+	  return 1;
+	}
 	time = static_cast<double>(cvGetTickCount()) / (cv::getTickFrequency() * 1000);
 	std::cout << " Time = " << time << std::endl;
 	
