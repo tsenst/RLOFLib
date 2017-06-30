@@ -21,14 +21,25 @@ set(SOURCE_FILES RLOFApp.cpp )
 
 add_executable(RLOFApp ${SOURCE_FILES} )
 
-
-if (MSVC)
-    target_link_libraries(RLOFApp  LINK_PUBLIC
-            ${OpenCV_LIBS} ${LIBRLOF_PATH}/libRLOF.lib )
+if( MSVC )
+    set( RLOFLIB_NAME ${LIBRLOF_PATH}"/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName).lib")
 else()
-    target_link_libraries(RLOFApp  LINK_PUBLIC
-            ${OpenCV_LIBS}
-            ${LIBRLOF_PATH}/libRLOF.dll.a "-Wl,--allow-multiple-definition"
-        )
+    if( WIN32)
+        if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+            set( RLOFLIB_NAME ${LIBRLOF_PATH}"/RLOF_MinGW64.dll.a")
+        elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
+            set( RLOFLIB_NAME ${LIBRLOF_PATH}"/RLOF_MinGW32.dll.a")
+        endif()
+    else()
+        if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+            set( RLOFLIB_NAME ${LIBRLOF_PATH}"/RLOF_64.a")
+        elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
+            set( RLOFLIB_NAME ${LIBRLOF_PATH}"/RLOF_32.a")
+        endif()
+    endif()
 endif()
-#TARGET_LINK_LIBRARIES( RLOFLib LINK_PUBLIC ${Boost_LIBRARIES} )
+
+target_link_libraries(RLOFApp  LINK_PUBLIC
+            ${OpenCV_LIBS}
+            ${LIBRLOF_PATH} "-Wl,--allow-multiple-definition"
+        )
