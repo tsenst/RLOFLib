@@ -21,8 +21,8 @@ The RLOF library contains:
   
 RLOF library supports the following methods published in articles :
   
-  - Robust local optical flow by shrinked Hampel norm, Senst et al. 2011, Senst et al. 2012.
-  - Residual based support region construction for RLOF, Senst et al. 2011, Senst et al. 2012.
+  - Robust local optical flow by shrinked Hampel norm, <a href="http://elvera.nue.tu-berlin.de/files/1277Senst2011.pdf">Senst et al. 2011</a>, <a href="http://elvera.nue.tu-berlin.de/files/1349Senst2012.pdf">Senst et al. 2012</a> .
+  - Residual based support region construction for RLOF, <a href="http://elvera.nue.tu-berlin.de/files/1277Senst2011.pdf">Senst et al. 2011</a>, <a href="http://elvera.nue.tu-berlin.de/files/1349Senst2012.pdf">Senst et al. 2012</a>.
   
   		@ARTICLE{Senst2012,
 		 AUTHOR = {Tobias Senst and Volker Eiselein and Thomas Sikora},
@@ -33,7 +33,7 @@ RLOF library supports the following methods published in articles :
 		 DOI = {10.1109/TCSVT.2012.2202070}                                         
 		} 
 				
-  - Cross based support region construction for PLK and RLOF, Senst et al. 2014.
+  - Cross based support region construction for PLK and RLOF, <a href="http://elvera.nue.tu-berlin.de/files/1448Senst2014.pdf">Senst et al. 2014</a>.
   
   		@INPROCEEDINGS{Senst2014,		    									
 		 AUTHOR = {Tobias Senst and Thilo Borgmann and Ivo Keller and Thomas Sikora},
@@ -41,7 +41,7 @@ RLOF library supports the following methods published in articles :
 		 BOOKTITLE = {21th IEEE International Conference on Image Processing},      
 		 YEAR = {2014},															    	 PAGES = {1967--1971},													    		}		 
 		 
-  - Iterative refinement strategy for PLK and RLOF using bilinear equations, Senst et al. 2013.
+  - Iterative refinement strategy for PLK and RLOF using bilinear equations, <a href="http://elvera.nue.tu-berlin.de/files/1422Senst2013.pdf">Senst et al. 2013</a>.
   
  		@INPROCEEDINGS{Senst2013,	   
 		 AUTHOR = {Tobias Senst and Jonas Geistert and Ivo Keller and Thomas Sikora},	
@@ -52,7 +52,7 @@ RLOF library supports the following methods published in articles :
 		 DOI = {10.1109/ICIP.2013.6738515},	
 		}	
 		
-  - Illumination robust model and global motion prior for PLK and RLOF, <a href="index.html#Senst2016">Senst et al. 2016</a>.
+  - Illumination robust model and global motion prior for PLK and RLOF, <a href="http://elvera.nue.tu-berlin.de/files/1496Senst2016.pdf">Senst et al. 2016</a>.
   
 		@INPROCEEDINGS{Senst2016,			    							
 		 AUTHOR = {Tobias Senst and Jonas Geistert and Thomas Sikora},		
