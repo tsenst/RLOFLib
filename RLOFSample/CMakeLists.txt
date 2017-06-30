@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 2.7)
 project(RLOFApp)
 
 
-set(LIBRLOF_INCLUDE "D:/Workspace/Senst/GIT/repo/C++/Optical\ Flow/OpticalFlowAlgorithms/RLOF/publish/" CACHE PATH " RLOF headers ")
-set(LIBRLOF_PATH "D:/workspace/Senst/GIT/repo/C++/Optical\ Flow/OpticalFlowAlgorithms/cmake-build-release/" CACHE PATH " RLOF library file ")
-set(OpenCV_DIR "D:/Workspace/Libs/opencv/build/MinGW/install/" CACHE PATH " OpenCV Install Path ")
+set(LIBRLOF_INCLUDE "/../include/" CACHE PATH " RLOF headers ")
+set(LIBRLOF_PATH "/../lib/" CACHE PATH " RLOF library file ")
+set(OpenCV_DIR "" CACHE PATH " OpenCV Install Path ")
 
 
 
@@ -22,24 +22,24 @@ set(SOURCE_FILES RLOFApp.cpp )
 add_executable(RLOFApp ${SOURCE_FILES} )
 
 if( MSVC )
-    set( RLOFLIB_NAME ${LIBRLOF_PATH}"/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName).lib")
+    set( RLOFLIB_NAME ${LIBRLOF_PATH}/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName).lib)
 else()
     if( WIN32)
         if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-            set( RLOFLIB_NAME ${LIBRLOF_PATH}"/RLOF_MinGW64.dll.a")
+            set( RLOFLIB_NAME ${LIBRLOF_PATH}/RLOF_MinGW64.dll.a)
         elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
             set( RLOFLIB_NAME ${LIBRLOF_PATH}"/RLOF_MinGW32.dll.a")
         endif()
     else()
         if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-            set( RLOFLIB_NAME ${LIBRLOF_PATH}"/RLOF_64.a")
+            set( RLOFLIB_NAME ${LIBRLOF_PATH}/RLOF_64.a)
         elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
-            set( RLOFLIB_NAME ${LIBRLOF_PATH}"/RLOF_32.a")
+            set( RLOFLIB_NAME ${LIBRLOF_PATH}/RLOF_32.a)
         endif()
     endif()
 endif()
 
 target_link_libraries(RLOFApp  LINK_PUBLIC
             ${OpenCV_LIBS}
-            ${LIBRLOF_NAME} "-Wl,--allow-multiple-definition"
+            ${RLOFLIB_NAME} "-Wl,--allow-multiple-definition"
         )
