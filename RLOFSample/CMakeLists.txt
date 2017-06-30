@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 2.7)
 project(RLOFApp)
 
 
-set(LIBRLOF_INCLUDE "../include/" CACHE PATH " RLOF headers ")
-set(LIBRLOF_PATH "../lib/" CACHE PATH " RLOF library file ")
+set(LIBRLOF_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/include/ CACHE PATH " RLOF headers ")
+set(LIBRLOF_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib/ CACHE PATH " RLOF library file ")
 set(OpenCV_DIR "" CACHE PATH " OpenCV Install Path ")
 
 
