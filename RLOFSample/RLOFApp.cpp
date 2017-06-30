@@ -9,16 +9,11 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
-extern "C"
-{
 #include <RLOF_Flow.h>
 
-}
 
 int main(int argc, char** argv)
 {
-	std::cout << " TEST "<<std::endl;
-
 	cv::Mat prevImg = cv::imread("D:/DataBase/Sintel/training/final/ambush_4/frame_0012.png");
 	cv::Mat currImg = cv::imread("D:/DataBase/Sintel/training/final/ambush_4/frame_0013.png");
 	rlof::Image img0, img1;
@@ -27,10 +22,8 @@ int main(int argc, char** argv)
 	img1.attach(currImg);
 
 	// Setup parameter and initialize sparse RLOF
-	//rlof::Parameter rlof_Parmeter;
-	SParameter rlof_Parameter;
-	//rlof::SparseFlow * proc = rlof::SparseFlow::create(rlof_Parmeter);
-	testFunc(1, rlof_Parameter);
+	rlof::Parameter rlof_Parmeter;
+	rlof::SparseFlow * proc = rlof::SparseFlow::create(rlof_Parmeter);
 	// Initialize flow field
 	for(int r = 0; r < prevImg.rows; r++)
 	{
@@ -42,7 +35,7 @@ int main(int argc, char** argv)
 
 	// run RLOF
 	double time = static_cast<double>(cvGetTickCount());
-	//proc->run(img0, img1, prevPoints, currPoints);
+	proc->run(img0, img1, prevPoints, currPoints);
 	time = static_cast<double>(cvGetTickCount()) / (cv::getTickFrequency() * 1000);
 	std::cout << " Time = " << time << std::endl;
 	
