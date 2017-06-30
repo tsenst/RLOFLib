@@ -73,7 +73,7 @@ wrapper functions. It supports Windows and Linux.
 The Matlab package contains Mex-functions for each OS. 
 Call "help mex_SparseRLOF" or "help mex_DenseRLOF" for a description of the arguments and see "RLOFSample.m" for an example use of the function.  
   
-#Requirements
+# Requirements
 Their should be no additional requirements to your OS. The library was tested with:
   - OpenCV3.1.0
   - Microsoft Visual Studio 2010 / 2012
@@ -85,14 +85,22 @@ Therefore disable the linking of OpenCV using the USE_NO_OPENCV preprocessor fla
 # Sample C++
 The folder RLOFApp contains the RLOFApp.cpp file which demonstrates the usage of the RLOF library.
  
-The sample project can be build with cmake (from Version 2.7). Please set the following options:
+The sample project can be build with cmake-gui (from Version 2.7). Please set the following options:
  - LIBRLOF_INCLUDE -> directing to the include directory containing the files RLOF_Flow.h and RLOF_Parameter.h
  - LIBRLOF_PATH 	-> directing to the lib directory containing libRLOF_X lib files
  - OpenCV_DIR 		-> directing to your local opencv directory.
-  
+## For Visual Studio  
 To run the sample please mention to announce the binary path "/lib/" e.g. by setting the environment PATH variable
 (e.g. PATH=D:/workspace/Arbeit_Senst/publicProjects/RLOFLib/lib/ ) in your project debugging settings.
+## For Linux
+You can build and run the sample project by using cmake as follows:
 
+	mkdir build
+	cd build
+	cmake ../
+	make -j
+	./RLOFApp
 # Contact 
 If you have questions regarding the implementation please contact:
+
 	Tobias Senst: <senst AT nue.tu-berlin.de> 
