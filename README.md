@@ -21,8 +21,8 @@ The RLOF library contains:
   
 RLOF library supports the following methods published in articles :
   
-  - Robust local optical flow by shrinked Hampel norm, Senst et al. 2011, Senst et al. 2012.
-  - Residual based support region construction for RLOF, Senst et al. 2011, Senst et al. 2012.
+  - Robust local optical flow by shrinked Hampel norm, <a href="http://elvera.nue.tu-berlin.de/files/1277Senst2011.pdf">Senst et al. 2011</a>, <a href="http://elvera.nue.tu-berlin.de/files/1349Senst2012.pdf">Senst et al. 2012</a> .
+  - Residual based support region construction for RLOF, <a href="http://elvera.nue.tu-berlin.de/files/1277Senst2011.pdf">Senst et al. 2011</a>, <a href="http://elvera.nue.tu-berlin.de/files/1349Senst2012.pdf">Senst et al. 2012</a>.
   
   		@ARTICLE{Senst2012,
 		 AUTHOR = {Tobias Senst and Volker Eiselein and Thomas Sikora},
@@ -33,7 +33,7 @@ RLOF library supports the following methods published in articles :
 		 DOI = {10.1109/TCSVT.2012.2202070}                                         
 		} 
 				
-  - Cross based support region construction for PLK and RLOF, Senst et al. 2014.
+  - Cross based support region construction for PLK and RLOF, <a href="http://elvera.nue.tu-berlin.de/files/1448Senst2014.pdf">Senst et al. 2014</a>.
   
   		@INPROCEEDINGS{Senst2014,		    									
 		 AUTHOR = {Tobias Senst and Thilo Borgmann and Ivo Keller and Thomas Sikora},
@@ -41,7 +41,7 @@ RLOF library supports the following methods published in articles :
 		 BOOKTITLE = {21th IEEE International Conference on Image Processing},      
 		 YEAR = {2014},															    	 PAGES = {1967--1971},													    		}		 
 		 
-  - Iterative refinement strategy for PLK and RLOF using bilinear equations, Senst et al. 2013.
+  - Iterative refinement strategy for PLK and RLOF using bilinear equations, <a href="http://elvera.nue.tu-berlin.de/files/1422Senst2013.pdf">Senst et al. 2013</a>.
   
  		@INPROCEEDINGS{Senst2013,	   
 		 AUTHOR = {Tobias Senst and Jonas Geistert and Ivo Keller and Thomas Sikora},	
@@ -52,7 +52,7 @@ RLOF library supports the following methods published in articles :
 		 DOI = {10.1109/ICIP.2013.6738515},	
 		}	
 		
-  - Illumination robust model and global motion prior for PLK and RLOF, <a href="index.html#Senst2016">Senst et al. 2016</a>.
+  - Illumination robust model and global motion prior for PLK and RLOF, <a href="http://elvera.nue.tu-berlin.de/files/1496Senst2016.pdf">Senst et al. 2016</a>.
   
 		@INPROCEEDINGS{Senst2016,			    							
 		 AUTHOR = {Tobias Senst and Jonas Geistert and Thomas Sikora},		
@@ -73,7 +73,7 @@ wrapper functions. It supports Windows and Linux.
 The Matlab package contains Mex-functions for each OS. 
 Call "help mex_SparseRLOF" or "help mex_DenseRLOF" for a description of the arguments and see "RLOFSample.m" for an example use of the function.  
   
-#Requirements
+# Requirements
 Their should be no additional requirements to your OS. The library was tested with:
   - OpenCV3.1.0
   - Microsoft Visual Studio 2010 / 2012
@@ -85,14 +85,22 @@ Therefore disable the linking of OpenCV using the USE_NO_OPENCV preprocessor fla
 # Sample C++
 The folder RLOFApp contains the RLOFApp.cpp file which demonstrates the usage of the RLOF library.
  
-The sample project can be build with cmake (from Version 2.7). Please set the following options:
+The sample project can be build with cmake-gui (from Version 2.7). Please set the following options:
  - LIBRLOF_INCLUDE -> directing to the include directory containing the files RLOF_Flow.h and RLOF_Parameter.h
  - LIBRLOF_PATH 	-> directing to the lib directory containing libRLOF_X lib files
  - OpenCV_DIR 		-> directing to your local opencv directory.
-  
+## For Visual Studio  
 To run the sample please mention to announce the binary path "/lib/" e.g. by setting the environment PATH variable
 (e.g. PATH=D:/workspace/Arbeit_Senst/publicProjects/RLOFLib/lib/ ) in your project debugging settings.
+## For Linux
+You can build and run the sample project by using cmake as follows:
 
+	mkdir build
+	cd build
+	cmake ../
+	make -j
+	./RLOFApp
 # Contact 
 If you have questions regarding the implementation please contact:
+
 	Tobias Senst: <senst AT nue.tu-berlin.de> 
