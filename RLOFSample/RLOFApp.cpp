@@ -14,8 +14,27 @@
 
 int main(int argc, char** argv)
 {
-	cv::Mat prevImg = cv::imread("../../Doc/ErnstReuter1.png");
-	cv::Mat currImg = cv::imread("../../Doc/ErnstReuter2.png");
+	std::string filename1, filename2;
+	if( argc < 2)
+	{
+		filename1 = "../../Doc/ErnstReuter1.png";
+		filename2 = "../../Doc/ErnstReuter1.png";
+	}
+	else
+	{
+		filename1 = std::string(argc[1]);
+		filename2 = std::string(argc[2]);
+	}
+	cv::Mat prevImg = cv::imread(filename1);
+	if ( prevImg.empty())
+	{
+		std::cout<< "[ERROR] Unable to load " << filename1 << std::endl;
+	}
+	cv::Mat currImg = cv::imread(filename2);
+	if ( currImg.empty())
+	{
+		std::cout<< "[ERROR] Unable to load " << filename2 << std::endl;
+	}
 	rlof::Image img0, img1;
 	std::vector<rlof::CRPoint> prevPoints, currPoints;
 	img0.attach(prevImg);
@@ -45,7 +64,7 @@ int main(int argc, char** argv)
 	  return 1;
 	}
 	time = static_cast<double>(cvGetTickCount()) / (cv::getTickFrequency() * 1000);
-	std::cout << " Time = " << time << std::endl;
+	std::cout << " Runtime = " << time << std::endl;
 	
 	// draw a rough idea of the dense flow field 
 	cv::Mat flow(2 * prevImg.rows, prevImg.cols, CV_8UC1);
@@ -59,8 +78,7 @@ int main(int argc, char** argv)
 		flowV.at<uchar>(pos) = cv::saturate_cast<uchar>(currPoints[n].y - prevPoints[n].y + 128);
 	}
 	
-	cv::imshow("Flow", flow);
-	cv::waitKey(-1);
+	cv::imwrite("Flow.png", flow);
 	return 0;
 }
 
