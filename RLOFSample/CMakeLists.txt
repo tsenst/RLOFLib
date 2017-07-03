@@ -22,6 +22,8 @@ set(SOURCE_FILES RLOFApp.cpp )
 add_executable(RLOFApp ${SOURCE_FILES} )
 
 if( MSVC )
+	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
     set( RLOFLIB_NAME ${LIBRLOF_PATH}/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName).lib)
 else()
     if( WIN32)
