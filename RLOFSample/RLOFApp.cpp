@@ -17,8 +17,8 @@ int main(int argc, char** argv)
 	std::string filename1, filename2;
 	if( argc < 2)
 	{
-		filename1 = "D:/Workspace/Senst/GIT/RLOFLib/Doc/ErnstReuter1.png";
-		filename2 = "D:/Workspace/Senst/GIT/RLOFLib/Doc/ErnstReuter2.png";
+		filename1 = "../../../Doc/ErnstReuter1.png";
+		filename2 = "../../../Doc/ErnstReuter2.png";
 	}
 	else
 	{
@@ -84,7 +84,6 @@ int main(int argc, char** argv)
 	cv::cvtColor(flowHSV, flowRGB, cv::COLOR_HSV2BGR);
 	flowRGB.convertTo(flowRGB, CV_8UC3);
 	cv::imwrite("Flow.png", flowRGB);
-	system("pause");
 	return 0;
 }
 

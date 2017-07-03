@@ -1,5 +1,8 @@
 # Example Application
-This small sample project demonstrates the application of the RLOF interface. It shows how to estimate a dense optical flow field.
+This small sample project demonstrates the application of the RLOF interface for computing a dense optical flow field.
+The demo loads two images, which can be passed by the input arguments or are the Ernstreuter images in the doc folder, 
+computes the dense optical flow field and write the results as color coded image to Flow.png.
+
 The sample project can be build with cmake-gui (from Version 2.7). Please set the following options:
  - LIBRLOF_INCLUDE -> directing to the include directory containing the files RLOF_Flow.h and RLOF_Parameter.h
  - LIBRLOF_PATH 	-> directing to the lib directory containing libRLOF_X lib files
