@@ -68,7 +68,7 @@ wrapper functions. It supports Windows and Linux.
 ## Matlab Mex-Function
 The Matlab package contains Mex-functions for each OS. 
 Call "help mex_SparseRLOF" or "help mex_DenseRLOF" for a description of the arguments and see "RLOFSample.m" for an example use of the function.  
-More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/Matlab/README.md)
+More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/tree/master/Matlab/README.md)
 
 ## Requirements
 Their should be no additional requirements to your OS. The library was tested with:
@@ -82,7 +82,7 @@ Therefore disable the linking of OpenCV using the USE_NO_OPENCV preprocessor fla
 
 ## Sample C++ Application
 The folder RLOFApp contains the RLOFApp.cpp file which will demonstrate the application of the RLOF library.
-More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/RLOFSample/README.md)
+More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/tree/master/RLOFSample/README.md)
 
 ## Contact
 If you have questions regarding the implementation please contact:
