@@ -1,7 +1,3 @@
-This repo is under construction. Please come back in a few days.
-Thank You 
-Tobias Senst
-
 # Robust Local Optical Flow V1.3
 This repository contains a description of the RLOF library on Robust Local Optical Flow estimation. 
 Please visit our webpage for more information (http://www.nue.tu-berlin.de/menue/forschung/projekte/rlof/).
@@ -69,38 +65,26 @@ In order to increase the robustness of the proposed implementation and avoid dep
 parallelization techniques such as the Streaming SIMD Extension instruction set and multi-threading with OpenMP. The RLOF library C++ is compiled as a shared library and provides matlab MEX 
 wrapper functions. It supports Windows and Linux. 
   
-# Matlab Mex-Function
+## Matlab Mex-Function
 The Matlab package contains Mex-functions for each OS. 
 Call "help mex_SparseRLOF" or "help mex_DenseRLOF" for a description of the arguments and see "RLOFSample.m" for an example use of the function.  
-  
-# Requirements
+More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/Matlab)
+
+## Requirements
 Their should be no additional requirements to your OS. The library was tested with:
   - OpenCV3.1.0
-  - Microsoft Visual Studio 2010 / 2012
+  - Microsoft Visual Studio 2013 / 2017
   - Matlab 2015a
   - Windows 7 (x64) / xubuntu Linux (x64)
+  
 The library was build using OpenCV 3.1.0. To enable the compatibility to another OpenCV version we provide the rlof::Image Wrapper interface.
 Therefore disable the linking of OpenCV using the USE_NO_OPENCV preprocessor flag.
 
-# Sample C++
-The folder RLOFApp contains the RLOFApp.cpp file which demonstrates the usage of the RLOF library.
- 
-The sample project can be build with cmake-gui (from Version 2.7). Please set the following options:
- - LIBRLOF_INCLUDE -> directing to the include directory containing the files RLOF_Flow.h and RLOF_Parameter.h
- - LIBRLOF_PATH 	-> directing to the lib directory containing libRLOF_X lib files
- - OpenCV_DIR 		-> directing to your local opencv directory.
-## For Visual Studio  
-To run the sample please mention to announce the binary path "/lib/" e.g. by setting the environment PATH variable
-(e.g. PATH=D:/workspace/Arbeit_Senst/publicProjects/RLOFLib/lib/ ) in your project debugging settings.
-## For Linux
-You can build and run the sample project by using cmake as follows:
+## Sample C++ Application
+The folder RLOFApp contains the RLOFApp.cpp file which will demonstrate the application of the RLOF library.
+More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/RLOFSample)
 
-	mkdir build
-	cd build
-	cmake ../
-	make -j
-	./RLOFApp
-# Contact 
+## Contact
 If you have questions regarding the implementation please contact:
 
 	Tobias Senst: <senst AT nue.tu-berlin.de> 
