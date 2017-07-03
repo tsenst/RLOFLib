@@ -22,9 +22,10 @@ set(SOURCE_FILES RLOFApp.cpp )
 add_executable(RLOFApp ${SOURCE_FILES} )
 
 if( MSVC )
-	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
-	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
-    set( RLOFLIB_NAME ${LIBRLOF_PATH}/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName).lib)
+set (LINK_LIBRARY optimized ${LIBRLOF_PATH}/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName).lib debug ${LIBRLOF_PATH}/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName)d.lib)
+	target_link_libraries(RLOFApp  
+            ${OpenCV_LIBS}
+            ${LINK_LIBRARY})
 else()
     if( WIN32)
         if(CMAKE_SIZEOF_VOID_P EQUAL 8)
@@ -39,9 +40,8 @@ else()
             set( RLOFLIB_NAME ${LIBRLOF_PATH}/libRLOF_32.so)
         endif()
     endif()
-endif()
-
-target_link_libraries(RLOFApp  LINK_PUBLIC
+	target_link_libraries(RLOFApp  LINK_PUBLIC
             ${OpenCV_LIBS}
             ${RLOFLIB_NAME} "-Wl,--allow-multiple-definition"
         )
+endif()

@@ -1,8 +1,8 @@
 /** 
- * \file RLOFApp.cpp
- * \brief RLOF Example application.
- * \date 30.06.2017
- * \author Tobias Senst
+ * /file RLOFApp.cpp
+ * /brief RLOF Example application.
+ * /date 30.06.2017
+ * /author Tobias Senst
  */
 
 #include <opencv2/core.hpp>
@@ -17,13 +17,13 @@ int main(int argc, char** argv)
 	std::string filename1, filename2;
 	if( argc < 2)
 	{
-		filename1 = "../../Doc/ErnstReuter1.png";
-		filename2 = "../../Doc/ErnstReuter1.png";
+		filename1 = "D:/Workspace/Senst/GIT/RLOFLib/Doc/ErnstReuter1.png";
+		filename2 = "D:/Workspace/Senst/GIT/RLOFLib/Doc/ErnstReuter2.png";
 	}
 	else
 	{
-		filename1 = std::string(argc[1]);
-		filename2 = std::string(argc[2]);
+		filename1 = std::string(argv[1]);
+		filename2 = std::string(argv[2]);
 	}
 	cv::Mat prevImg = cv::imread(filename1);
 	if ( prevImg.empty())
@@ -53,7 +53,7 @@ int main(int argc, char** argv)
 	}
 
 	// run RLOF
-	double time = static_cast<double>(cvGetTickCount());
+	double time = static_cast<double>(cv::getTickCount());
 	try
 	{
 	  proc->run(img0, img1, prevPoints, currPoints);
@@ -63,22 +63,28 @@ int main(int argc, char** argv)
 	  std::cout << e.what() << std::endl;
 	  return 1;
 	}
-	time = static_cast<double>(cvGetTickCount()) / (cv::getTickFrequency() * 1000);
-	std::cout << " Runtime = " << time << std::endl;
+	std::cout << " Runtime = " << (static_cast<double>(cv::getTickCount()) - time) / (cvGetTickFrequency() * 1000.f) << std::endl;
 	
 	// draw a rough idea of the dense flow field 
-	cv::Mat flow(2 * prevImg.rows, prevImg.cols, CV_8UC1);
-	cv::Mat flowU(flow, cv::Rect(0,0,prevImg.cols,prevImg.rows));
-	cv::Mat flowV(flow, cv::Rect(0,prevImg.rows,prevImg.cols,prevImg.rows));
+	cv::Mat flowU(prevImg.rows, prevImg.cols, CV_32FC1);
+	cv::Mat flowV(prevImg.rows, prevImg.cols, CV_32FC1);
+	cv::Mat flowHSV, flowRGB;
+	std::vector<cv::Mat> flowVec(3);
 
 	for( unsigned int n = 0 ; n < currPoints.size(); n++)
 	{
 		cv::Point pos(prevPoints[n].x, prevPoints[n].y);
-		flowU.at<uchar>(pos) = cv::saturate_cast<uchar>(currPoints[n].x - prevPoints[n].x + 128);
-		flowV.at<uchar>(pos) = cv::saturate_cast<uchar>(currPoints[n].y - prevPoints[n].y + 128);
+		flowU.at<float>(pos) = currPoints[n].x - prevPoints[n].x;
+		flowV.at<float>(pos) = currPoints[n].y - prevPoints[n].y;
 	}
 	
-	cv::imwrite("Flow.png", flow);
+	cv::cartToPolar(flowU, flowV, flowVec[1], flowVec[0], true);
+	flowVec[2] = cv::Mat::ones(flowVec[0].size(), flowVec[0].type()) * 255;
+	cv::merge(flowVec, flowHSV);
+	cv::cvtColor(flowHSV, flowRGB, cv::COLOR_HSV2BGR);
+	flowRGB.convertTo(flowRGB, CV_8UC3);
+	cv::imwrite("Flow.png", flowRGB);
+	system("pause");
 	return 0;
 }
 
