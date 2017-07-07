@@ -66,6 +66,7 @@
  - Add global motion prior allowing to improve the accuracy of estimation long-range motions
  - Add illumination robust model to imporve the accuracy in environments with illumination changes.
  - Intel's Threading Building Blocks (Intel TBB) is no longer supported. Parallelization will be based on SSE and OpenMP.
+ - Add Python interface
  
  \section Sample Sample
  The folder RLOFApp contains the RLOFApp.cpp file which demonstrates the usage of the RLOF library.
