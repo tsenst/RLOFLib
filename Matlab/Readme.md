@@ -11,3 +11,8 @@ mex_DenseRLOF to compute dense optical flow fields and
 	
 mex_SparseRLOF to track a set of predefined points based on the sparse RLOF estimation.
 Both mex files have been compiled with Matlab 15a and the Microsoft Visual C++ 2013 Professional compiler. 
+The example application has been tested with the following configurations:
+ - [x] Matlab2015a / Windows 7
+ - [x] Matlab2017a / Ubuntu 17.04
+ 
+ Mex files have been build with gcc-4.7
