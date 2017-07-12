@@ -28,10 +28,10 @@ The header of the C++ interface can be found in the `/include/` directory. The l
 The library was build using OpenCV 3.1.0. To enable the compatibility to another OpenCV version we provide the rlof::Image Wrapper interface.
 If no OpenCV will be used please set the USE_NO_OPENCV preprocessor flag to disable the OpenCV related code.
 The C++ library files have been compiled with the following OS and development environments:
-	- Visual Studio 2012 (vc120) / x64 / Windows 7 
-	- Visual Studio 2017 (vc141) / x64 / Windows 7 
-	- MinGW / x64 / Windows 7
-	- gcc-5.4.0 / x64 / Ubuntu 17.04
+  - Visual Studio 2012 (vc120) / x64 / Windows 7 
+  - Visual Studio 2017 (vc141) / x64 / Windows 7 
+  - MinGW / x64 / Windows 7
+  - gcc-5.4.0 / x64 / Ubuntu 17.04
 
 An example applicatio nwhich will demonstrate the application of the RLOF library can be found in the directory `/RLOFApp/`.
 More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/RLOFSample/Readme.md)
@@ -39,9 +39,8 @@ More detailed description can be found [here...](https://github.com/tsenst/RLOFL
 ## Matlab Interface
 The Matlab Mex-Files for each OS and are located at the `/Matlab/` directory.
 The mex files have been compiled with the following OS and development environments:
-
-   - Matlab 2015 / Visual Studio 2012 / x64 / Windows
-   - Linux (... in progress)
+  - Matlab 2015 / Visual Studio 2012 / x64 / Windows
+  - Linux (... in progress)
 
 Call `help mex_SparseRLOF` or `help mex_DenseRLOF` for a description of the arguments and see **RLOFSample.m** for an example use of the function.  
 More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/Matlab/Readme.md)
@@ -49,12 +48,11 @@ More detailed description can be found [here...](https://github.com/tsenst/RLOFL
 ## Python Interface 
 The Python interface is based on *boost-python* and the python *numpy* library and located at the directory `\Python`. 
 The Python interface libraries have compiled with the following OS and development environments:
-
-   - Python 3.5.2 / gcc-5.4.0 / Ubuntu 17.04 
-   - Python 2.7.12 / gcc-5.4.0 / Ubuntu 17.04 
-   - Windows (... in progress)
+  - Python 3.5.2 / gcc-5.4.0 / Ubuntu 17.04 
+  - Python 2.7.12 / gcc-5.4.0 / Ubuntu 17.04 
+  - Python 3.5 /Visual Studio 2017 (vc141) / Windows 
 	
-Call `import rlofpy` to import the RLOF library. The **RLOFSample.py** shows how to use the RLOF library.
+Call `import rlof` to import the RLOF library. The **RLOFSample.py** shows how to use the RLOF library.
 More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/Python/Readme.md)
 	
 ## Description 
