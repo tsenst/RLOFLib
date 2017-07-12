@@ -15,22 +15,34 @@
 int main(int argc, char** argv)
 {
 	std::string filename1, filename2;
+	cv::Mat prevImg = cv::imread(filename1);
+	cv::Mat currImg = cv::imread(filename2);
 	if( argc < 2)
 	{
-		filename1 = "../../../Doc/ErnstReuter1.png";
-		filename2 = "../../../Doc/ErnstReuter2.png";
+		filename1 = "../../Doc/ErnstReuter1.png";
+		filename2 = "../../Doc/ErnstReuter2.png";
+		prevImg = cv::imread(filename1);
+		currImg = cv::imread(filename2);
+		if (prevImg.empty())
+		{
+			filename1 = "../../../Doc/ErnstReuter1.png";
+			filename2 = "../../../Doc/ErnstReuter2.png";
+			prevImg = cv::imread(filename1);
+			currImg = cv::imread(filename2);
+		}
 	}
 	else
 	{
 		filename1 = std::string(argv[1]);
 		filename2 = std::string(argv[2]);
+		prevImg = cv::imread(filename1);
+		currImg = cv::imread(filename2);
 	}
-	cv::Mat prevImg = cv::imread(filename1);
+	
 	if ( prevImg.empty())
 	{
 		std::cout<< "[ERROR] Unable to load " << filename1 << std::endl;
 	}
-	cv::Mat currImg = cv::imread(filename2);
 	if ( currImg.empty())
 	{
 		std::cout<< "[ERROR] Unable to load " << filename2 << std::endl;
@@ -73,7 +85,7 @@ int main(int argc, char** argv)
 
 	for( unsigned int n = 0 ; n < currPoints.size(); n++)
 	{
-		cv::Point pos(prevPoints[n].x, prevPoints[n].y);
+		cv::Point pos(static_cast<int>(prevPoints[n].x), static_cast<int>(prevPoints[n].y));
 		flowU.at<float>(pos) = currPoints[n].x - prevPoints[n].x;
 		flowV.at<float>(pos) = currPoints[n].y - prevPoints[n].y;
 	}
