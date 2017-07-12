@@ -19,26 +19,29 @@ int main(int argc, char** argv)
 	cv::Mat currImg = cv::imread(filename2);
 	if( argc < 2)
 	{
-		filename1 = "../../Doc/ErnstReuter1.png";
-		filename2 = "../../Doc/ErnstReuter2.png";
+		filename1 = "../Doc/ErnstReuter1.png";
+		filename2 = "../Doc/ErnstReuter2.png";
 		prevImg = cv::imread(filename1);
-		currImg = cv::imread(filename2);
+		if (prevImg.empty())
+		{
+			filename1 = "../../Doc/ErnstReuter1.png";
+			filename2 = "../../Doc/ErnstReuter2.png";
+			prevImg = cv::imread(filename1);
+		}
 		if (prevImg.empty())
 		{
 			filename1 = "../../../Doc/ErnstReuter1.png";
 			filename2 = "../../../Doc/ErnstReuter2.png";
-			prevImg = cv::imread(filename1);
-			currImg = cv::imread(filename2);
 		}
 	}
 	else
 	{
 		filename1 = std::string(argv[1]);
 		filename2 = std::string(argv[2]);
-		prevImg = cv::imread(filename1);
-		currImg = cv::imread(filename2);
 	}
-	
+	prevImg = cv::imread(filename1);
+	currImg = cv::imread(filename2);
+		
 	if ( prevImg.empty())
 	{
 		std::cout<< "[ERROR] Unable to load " << filename1 << std::endl;
