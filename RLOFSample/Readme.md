@@ -13,6 +13,12 @@ Run cmake-gui and select a build folder to create the visual studio solution fil
 The example application has been tested with the following configurations:
  - [x] Visual Studio 2010 / Windows 7
  - [x] Visual Studio 2017 / Windows 7
+
+If your current Visual Studio version is not supported. You can try to link sibiling existing version.
+The following configurations have been tested:
+ - [x] Visual Studio 2015 link libRLOF_vc141_x64.lib / Windows 10
+
+Please feel free to contact us (senst@nue.tu-berlin.de) if you need a specific compilant for your development enviroment. 
  
 Please mention to announce the binary path "/lib/" e.g. by setting the environment PATH variable
 (e.g. PATH=D:/workspace/Arbeit_Senst/publicProjects/RLOFLib/lib/ ) in your project debugging settings.
