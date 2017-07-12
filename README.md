@@ -34,7 +34,7 @@ The C++ library files have been compiled with the following OS and development e
   - gcc-5.4.0 / x64 / Ubuntu 17.04
 
 An example applicatio nwhich will demonstrate the application of the RLOF library can be found in the directory `/RLOFApp/`.
-More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/RLOFSample/Readme.md)
+More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/tree/master/RLOFSample)
 
 ## Matlab Interface
 The Matlab Mex-Files for each OS and are located at the `/Matlab/` directory.
@@ -43,7 +43,7 @@ The mex files have been compiled with the following OS and development environme
   - Linux (... in progress)
 
 Call `help mex_SparseRLOF` or `help mex_DenseRLOF` for a description of the arguments and see **RLOFSample.m** for an example use of the function.  
-More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/Matlab/Readme.md)
+More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/tree/master/Matlab)
 
 ## Python Interface 
 The Python interface is based on *boost-python* and the python *numpy* library and located at the directory `\Python`. 
@@ -53,7 +53,7 @@ The Python interface libraries have compiled with the following OS and developme
   - Python 3.5 /Visual Studio 2017 (vc141) / Windows 
 	
 Call `import rlof` to import the RLOF library. The **RLOFSample.py** shows how to use the RLOF library.
-More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/Python/Readme.md)
+More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/tree/master/Python)
 	
 ## Description 
 The RLOF library contains:
