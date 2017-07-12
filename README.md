@@ -39,6 +39,7 @@ More detailed description can be found [here...](https://github.com/tsenst/RLOFL
 ## Matlab Interface
 The Matlab Mex-Files for each OS and are located at the `/Matlab/` directory.
 The mex files have been compiled with the following OS and development environments:
+
    - Matlab 2015 / Visual Studio 2012 / x64 / Windows
    - Linux (... in progress)
 
@@ -48,9 +49,10 @@ More detailed description can be found [here...](https://github.com/tsenst/RLOFL
 ## Python Interface 
 The Python interface is based on *boost-python* and the python *numpy* library and located at the directory `\Python`. 
 The Python interface libraries have compiled with the following OS and development environments:
-	- Python 3.5.2 / gcc-5.4.0 / Ubuntu 17.04 
-	- Python 2.7.12 / gcc-5.4.0 / Ubuntu 17.04 
-	- Windows (... in progress)
+
+   - Python 3.5.2 / gcc-5.4.0 / Ubuntu 17.04 
+   - Python 2.7.12 / gcc-5.4.0 / Ubuntu 17.04 
+   - Windows (... in progress)
 	
 Call `import rlofpy` to import the RLOF library. The **RLOFSample.py** shows how to use the RLOF library.
 More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/Python/Readme.md)
