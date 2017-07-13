@@ -7,6 +7,7 @@
 
 #if CV_MAJOR_EPOCH < 3
 #include <cv.h>
+#include <highgui.h>
 #else
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
