@@ -13,18 +13,18 @@ rlofProc.set_param(
   # Specifying the iterative refinement strategy.
   # - "ST_STANDART" 	Standard iterative inverse compositional solver.
   # - "ST_BILINEAR" 	Bilinear equation solver, described in Senst et al. 2013.
-	 parameters["SupportRegionType"],  
+  parameters["SupportRegionType"],  
   # Specifying the adaptive support region strategy to be used: 
   #  - "SR_FIXED"  	Rectangle constant support region.
   #  - "SR_CROSS"  	Adaptive support region based on the cross-based segmentation introduced in Senst et al. 2016.
   #  - "SR_RESIDUAL"   Adaptive support region based on evaluatin the residual introduced in Senst et al. , Senst et al. 2012.
-	 parameters["maxLevel"],           
+  parameters["maxLevel"],           
   # A positive number specifying the number of levels used for the Gaussian pyramid.
   parameters["maxIter"],            
   # A positive number specifying the maximal number of iteration used for the iterative refinement.
-	 parameters["largeWinSize"], 
+  parameters["largeWinSize"], 
   # A positive number specifying the maximal support region size (or the region size if SR_FIXED is used).
-	 parameters["smallWinSize"],
+  parameters["smallWinSize"],
   # A positive number specifying the minimal support region size (ignored if SR_FIXED is used).
   parameters["HampelNormS0"], 
   # A positive number specifying the shrinked Hampel norm parameter sigma_1 refering to Senst et al. 2012.
