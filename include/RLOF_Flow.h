@@ -23,7 +23,11 @@
 //#define USE_NO_OPENCV   // set this flag if used without OpenCV
 
 #ifndef USE_NO_OPENCV
-#include <opencv2/core.hpp>
+ #if CV_MAJOR_EPOCH < 3
+  #include <cv.h>
+ #else
+  #include <opencv2/core.hpp>
+ #endif
 #endif
 #include "RLOF_Parameter.h"
 #include <vector>

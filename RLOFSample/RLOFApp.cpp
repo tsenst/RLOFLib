@@ -5,12 +5,16 @@
  * /author Tobias Senst
  */
 
+#if CV_MAJOR_EPOCH < 3
+#include <cv.h>
+#include <highgui.h>
+#else
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+#endif
 #include <iostream>
 #include <RLOF_Flow.h>
-
 
 int main(int argc, char** argv)
 {
