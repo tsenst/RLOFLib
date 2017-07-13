@@ -12,9 +12,9 @@
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+#endif
 #include <iostream>
 #include <RLOF_Flow.h>
-#endif
 
 int main(int argc, char** argv)
 {
