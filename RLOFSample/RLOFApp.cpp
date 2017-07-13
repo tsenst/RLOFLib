@@ -5,7 +5,7 @@
  * /author Tobias Senst
  */
 
-#ifdef CV_MAJOR_EPOCH < 3
+#if CV_MAJOR_EPOCH < 3
 #include <cv.h>
 #else
 #include <opencv2/core.hpp>
