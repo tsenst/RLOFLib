@@ -19,8 +19,8 @@
 int main(int argc, char** argv)
 {
 	std::string filename1, filename2;
-	cv::Mat prevImg = cv::imread(filename1);
-	cv::Mat currImg = cv::imread(filename2);
+	cv::Mat prevImg;
+	cv::Mat currImg;
 	if( argc < 2)
 	{
 		filename1 = "../Doc/ErnstReuter1.png";

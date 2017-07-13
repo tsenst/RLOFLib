@@ -9,7 +9,7 @@ set(OpenCV_DIR "" CACHE PATH " OpenCV Install Path ")
 
 
 FIND_PACKAGE( OpenCV REQUIRED )
-
+message("${OPENCV_VERSION}")
 #set (CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} --allow-multiple-definition" )
 include_directories(${LIBRLOF_INCLUDE} ${OpenCV_INCLUDE})
 
@@ -24,8 +24,9 @@ add_executable(RLOFApp ${SOURCE_FILES} )
 if( MSVC )
 set (LINK_LIBRARY optimized ${LIBRLOF_PATH}/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName).lib debug ${LIBRLOF_PATH}/libRLOF_vc$(PlatformToolsetVersion)_$(PlatformName)d.lib)
 	target_link_libraries(RLOFApp  
+			${LINK_LIBRARY}
             ${OpenCV_LIBS}
-            ${LINK_LIBRARY})
+            )
 else()
     if( WIN32)
         if(CMAKE_SIZEOF_VOID_P EQUAL 8)
@@ -40,8 +41,9 @@ else()
             set( RLOFLIB_NAME ${LIBRLOF_PATH}/libRLOF_32.so)
         endif()
     endif()
-	target_link_libraries(RLOFApp  LINK_PUBLIC
+	target_link_libraries(RLOFApp 
+	        ${RLOFLIB_NAME} 
             ${OpenCV_LIBS}
-            ${RLOFLIB_NAME} "-Wl,--allow-multiple-definition"
         )
+	message("${OpenCV_LIBS}")
 endif()
