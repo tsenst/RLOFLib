@@ -1,3 +1,4 @@
+# ATTENTION !! THIS REPO IS STILL UNDER CONSTRUCTION PLEASE COME BACK IN A FEW DAYS
 # Robust Local Optical Flow V1.3
 This repository contains the RLOF library for Robust Local Optical Flow based motion estimation. The software implements several versions of the RLOF algorithm.
 Please visit our webpage for more information (http://www.nue.tu-berlin.de/menue/forschung/projekte/rlof/).
