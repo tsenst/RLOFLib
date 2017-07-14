@@ -9,7 +9,7 @@ set(OpenCV_DIR "" CACHE PATH " OpenCV Install Path ")
 
 
 FIND_PACKAGE( OpenCV REQUIRED )
-message("${OPENCV_VERSION}")
+
 #set (CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} --allow-multiple-definition" )
 include_directories(${LIBRLOF_INCLUDE} ${OpenCV_INCLUDE})
 
@@ -17,6 +17,7 @@ include_directories(${LIBRLOF_INCLUDE} ${OpenCV_INCLUDE})
 add_definitions(-DHAVE_OPENMP )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_BUILD_TYPE  Release)
 set(SOURCE_FILES RLOFApp.cpp )
 
 add_executable(RLOFApp ${SOURCE_FILES} )
@@ -41,7 +42,7 @@ else()
             set( RLOFLIB_NAME ${LIBRLOF_PATH}/libRLOF_32.so)
         endif()
     endif()
-	target_link_libraries(RLOFApp 
+	target_link_libraries(RLOFApp LINK_PUBLIC
 	        ${RLOFLIB_NAME} 
             ${OpenCV_LIBS}
         )
