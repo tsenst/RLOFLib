@@ -5,14 +5,11 @@
  * /author Tobias Senst
  */
 
-#if CV_MAJOR_EPOCH < 3
-#include <cv.h>
-#include <highgui.h>
-#else
-#include <opencv2/core.hpp>
+
+#include <opencv2/core.hpp> 
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
-#endif
+
 #include <iostream>
 #include <RLOF_Flow.h>
 
@@ -26,7 +23,7 @@ int main(int argc, char** argv)
 		filename1 = "../Doc/ErnstReuter1.png";
 		filename2 = "../Doc/ErnstReuter2.png";
 		prevImg = cv::imread(filename1);
-		if (prevImg.empty())
+		if(prevImg.empty())
 		{
 			filename1 = "../../Doc/ErnstReuter1.png";
 			filename2 = "../../Doc/ErnstReuter2.png";
