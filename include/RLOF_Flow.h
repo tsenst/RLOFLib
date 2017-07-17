@@ -56,7 +56,7 @@ namespace rlof
 			if (src.type() != CV_8UC3)
 			throw(std::runtime_error("[ERROR] Wrong image type (CV_8UC3 needed)."));
             m_DataPtr = src.ptr<unsigned char>();
-            m_Step = src.step;
+            m_Step = static_cast<int>(src.step);
             m_Rows = src.rows;
             m_Cols = src.cols;
             if( src.type() != CV_8UC3)
