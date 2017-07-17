@@ -6,9 +6,9 @@
  */
 
 
-#include <opencv2/core.hpp> 
-#include <opencv2/imgproc.hpp>
-#include <opencv2/highgui.hpp>
+#include <opencv2/core/core.hpp> 
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
 #include <iostream>
 #include <RLOF_Flow.h>
@@ -96,6 +96,8 @@ int main(int argc, char** argv)
 	
 	cv::cartToPolar(flowU, flowV, flowVec[1], flowVec[0], true);
 	flowVec[2] = cv::Mat::ones(flowVec[0].size(), flowVec[0].type()) * 255;
+	cv::threshold(flowVec[1], flowVec[1], 4, 4, CV_THRESH_TRUNC);
+	flowVec[1] = flowVec[1] * 0.25f;
 	cv::merge(flowVec, flowHSV);
 	cv::cvtColor(flowHSV, flowRGB, cv::COLOR_HSV2BGR);
 	flowRGB.convertTo(flowRGB, CV_8UC3);
