@@ -1,3 +1,4 @@
+# ATTENTION !! THIS REPO IS STILL UNDER CONSTRUCTION PLEASE COME BACK IN A FEW DAYS
 # Robust Local Optical Flow V1.3
 This repository contains the RLOF library for Robust Local Optical Flow based motion estimation. The software implements several versions of the RLOF algorithm.
 Please visit our webpage for more information (http://www.nue.tu-berlin.de/menue/forschung/projekte/rlof/).
@@ -23,7 +24,13 @@ Their should be no additional requirements to your OS. The library was tested wi
 The library was build using OpenCV 3.1.0. To enable the compatibility to another OpenCV version we provide the rlof::Image Wrapper interface.
 Therefore disable the linking of OpenCV using the USE_NO_OPENCV preprocessor flag.
 
-## C++ Interface 
+## Installation 
+
+```
+git clone http://github.com/tsenst/RLOFLib
+```
+### C++ Interface 
+
 The header of the C++ interface can be found in the `/include/` directory. The library files are located at the `/lib/` directory.
 The library was build using OpenCV 3.1.0. To enable the compatibility to another OpenCV version we provide the rlof::Image Wrapper interface.
 If no OpenCV will be used please set the USE_NO_OPENCV preprocessor flag to disable the OpenCV related code.
@@ -31,12 +38,12 @@ The C++ library files have been compiled with the following OS and development e
   - Visual Studio 2012 (vc120) / x64 / Windows 7 
   - Visual Studio 2017 (vc141) / x64 / Windows 7 
   - MinGW / x64 / Windows 7
-  - gcc-5.4.0 / x64 / Ubuntu 17.04
+  - gcc-5.4.0 / x64 / Ubuntu 17.04 ( in process )
 
 An example applicatio nwhich will demonstrate the application of the RLOF library can be found in the directory `/RLOFApp/`.
 More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/tree/master/RLOFSample)
 
-## Matlab Interface
+### Matlab Interface
 The Matlab Mex-Files for each OS and are located at the `/Matlab/` directory.
 The mex files have been compiled with the following OS and development environments:
   - Matlab 2015 / Visual Studio 2012 / x64 / Windows
@@ -45,8 +52,31 @@ The mex files have been compiled with the following OS and development environme
 Call `help mex_SparseRLOF` or `help mex_DenseRLOF` for a description of the arguments and see **RLOFSample.m** for an example use of the function.  
 More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/tree/master/Matlab)
 
-## Python Interface 
-The Python interface is based on *boost-python* and the python *numpy* library and located at the directory `\Python`. 
+### Python Interface 
+The Python interface depends on *boost-python* and the python *numpy* package. The interface is located at the directory `\Python`.
+In addition the example application depends on the *python-opencv* package.
+#### Python 2.X
+Install python, numpy and opencv packages.
+```
+sudo apt install python-numpy libboost-python-dev python-opencv
+```
+Run example application.
+```
+cd RLOFLib/Python
+python RLOFExample.py
+```
+#### Python 3.X
+Install python, numpy and pip3 packages. Use pip3 to install the python3 opencv package.
+```
+sudo apt install python3-numpy pip3 libboost-python-dev
+sudo pip3 install opencv-python
+```
+Run example application.
+```
+cd RLOFLib/Python
+python3 RLOFExample.py
+```
+
 The Python interface libraries have compiled with the following OS and development environments:
   - Python 3.5.2 / gcc-5.4.0 / Ubuntu 17.04 
   - Python 2.7.12 / gcc-5.4.0 / Ubuntu 17.04 
