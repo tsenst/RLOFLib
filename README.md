@@ -36,8 +36,7 @@ If no OpenCV will be used please set the USE_NO_OPENCV preprocessor flag to disa
 The C++ library files have been compiled with the following OS and development environments:
   - Visual Studio 2012 (vc120) / x64 / Windows 7 
   - Visual Studio 2017 (vc141) / x64 / Windows 7 
-  - MinGW / x64 / Windows 7
-  - gcc-5.4.0 / x64 / Ubuntu 17.04 ( in process )
+  - gcc-5.4.0 / x64 / Ubuntu 17.04 ( experimental )
 
 An example applicatio nwhich will demonstrate the application of the RLOF library can be found in the directory `/RLOFApp/`.
 More detailed description can be found [here...](https://github.com/tsenst/RLOFLib/tree/master/RLOFSample)
