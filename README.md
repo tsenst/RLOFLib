@@ -1,3 +1,6 @@
+***Source code of the Robust Local Optical Flow is now available!***
+
+Take a look at the **add_robust_optical_flow_implementation** branch of my opencv contribution fork: https://github.com/tsenst/opencv_contrib/tree/add_robust_optical_flow_implementation
 # Robust Local Optical Flow V1.3
 This repository contains the RLOF library for Robust Local Optical Flow based motion estimation. The software implements several versions of the RLOF algorithm.
 Please visit our webpage for more information (http://www.nue.tu-berlin.de/menue/forschung/projekte/rlof/).
